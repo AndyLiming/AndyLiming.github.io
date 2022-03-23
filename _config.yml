@@ -1,1 +1,42 @@
-theme: jekyll-theme-merlot
+title: Homepage - Ming Li
+#description: A minimal and beautiful Jekyll theme best for writing and note-taking.
+author: Ming Li
+avatar: /blue_cat.png
+email: mingli@smail.nju.edu.cn
+
+current_state: Ph.D. student on EE
+
+institution: Nanjing University
+
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-paginate
+
+paginate: 10
+
+subscribe: False
+
+research_interests: 
+  - Computer Vision
+  - Depth Estimation
+  - Stereo Matching
+  - Deep Learning
+# Uncomment the below line and set the tracking ID for enabling Google Analytics
+# 
+# google_analytics: 
+
+# Uncomment the below lines and set the Disqus shortname for enabling Disqus
+# 
+# disqus:
+
+# Jekyll
+# ======
+exclude:
+  - scripts/
+  - jekyll-theme-hamilton.gemspec
+
+# Jekyll SEO Tag (Optional)
+# =========================

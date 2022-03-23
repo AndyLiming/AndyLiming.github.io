@@ -1,0 +1,84 @@
+{% if site.avatar -%}
+<div class="sidebar-section">
+  {%- if site.avatar contains "://" -%}
+  {%- assign avatar = site.avatar -%}
+  {%- else -%}
+  {%- assign avatar = site.avatar | relative_url -%}
+  {%- endif -%}
+  <img src="{{ avatar }}" class="author-avatar u-photo align-center" alt="{{ site.author }}">
+</div>
+{%- endif %}
+
+<div class="sidebar-section">
+  <ul class="contact-list">
+    {% if site.author -%}
+    <li>
+      <i class="sidebar-icon fas fa-at"></i>
+      <span class="contact-info p-name">{{ site.author | escape }}</span>
+    </li>
+    {%- endif %}
+    {% if site.current_state -%}
+    <li>
+      <i class="sidebar-icon fas fa-book"></i>
+      <span class="contact-info cur-state">{{ site.current_state }}</span>
+    </li>
+    {%- endif %}
+    {% if site.institution -%}
+    <li>
+      <i class="sidebar-icon fas fa-building"></i>
+      <span class="contact-info p-institution">{{ site.institution }}</span>
+    </li>
+    {%- endif %}
+    {% if site.email -%}
+    <li>
+      <i class="sidebar-icon fas fa-envelope"></i>
+      <a class="contact-info u-email" href="mailto:{{ site.email }}">{{ site.email }}</a>
+    </li>
+    {%- endif %}
+    {% if site.location -%}
+    <li>
+      <i class="sidebar-icon fas fa-location-arrow"></i>
+      <a class="contact-info u-location" href="https://www.google.com/maps/search/{{ site.location }}">{{ site.location
+        }}</a>
+    </li>
+    {%- endif %}
+  </ul>
+</div>
+<div class="sidebar-section">
+  <ul class="self-intro">
+    {% if site.research_interests -%}
+    <li>
+      <i class="sidebar-icon fas fa-solid fa-flask"></i>
+      <span class="self-intro research_interests" style="font-size: large;color: lawngreen;">Research interests</span>
+    </li>
+    {% for ri in site.research_interests -%}
+    <li>
+      <span class="self-intro research_interests" style="font-weight: bold;">{{ri}}</span>
+    </li>
+    {%- endfor %}
+
+    {%- endif %}
+  </ul>
+</div>
+
+
+{% if site.subscribe != false -%}
+<div class="sidebar-section feed-subscribe">
+  <a href="{{ 'feed.xml' | relative_url }}">
+    <i class="sidebar-icon fas fa-rss"></i><span>Subscribe</span>
+  </a>
+</div>
+{%- endif %}
+
+{% if site.data.social -%}
+<div class="sidebar-section">
+  <ul class="social-icons">
+    {% for social in site.data.social -%}
+    <li>
+      <a class="social-icon" href="{{ social.url }}"><i class="{{ social.icon | default: 'fas fa-link' }} fa-2x"
+          title="{{ social.title }}"></i></a>
+    </li>
+    {%- endfor %}
+  </ul>
+</div>
+{%- endif %}
